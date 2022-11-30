@@ -14,7 +14,7 @@ class MyThemeData{
     ),
     textTheme: TextTheme(
       headline1: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),
-      subtitle1:  TextStyle(fontWeight: FontWeight.normal,fontSize: 20),
+      subtitle1:  TextStyle(fontWeight: FontWeight.w600,fontSize: 25),
     ),
   );
 

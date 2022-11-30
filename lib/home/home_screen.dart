@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:islami/home/hadeth_tab.dart';
+import 'package:islami/home/quran/quran_tab.dart';
+import 'package:islami/home/radio_tab.dart';
+import 'package:islami/home/sebha_tab.dart';
 import 'package:islami/my_theme_data.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,6 +16,14 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
+
+  List<Widget> tabs =
+  [
+    QuranTab(),
+    HadethTab(),
+    SebhaTab(),
+    RadioTab(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
           title: Text('Islami',style: Theme.of(context).textTheme.headline1,),
         ),
         bottomNavigationBar: BottomNavigationBar(
+          currentIndex: currentIndex,
           onTap:  (index) {
             currentIndex = index;
             setState(() {
@@ -37,32 +50,34 @@ class _HomeScreenState extends State<HomeScreen> {
             [
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/icon_quran.png'),
-                  size: 50,
+                  size: 40,
                   ),
                   backgroundColor: MyThemeData.secondaryColor,
                   label: 'Quran'
               ),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/icon_hadeth.png',) ,
-                    size: 50,
+                    size: 40,
                       ),
                   backgroundColor: MyThemeData.secondaryColor,
                   label: 'Hadeth'
               ),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/icon_sebha.png',),  size: 50,
+                  icon: ImageIcon(AssetImage('assets/images/icon_sebha.png',),  size: 40,
                   ),
                   backgroundColor: MyThemeData.secondaryColor,
                   label: 'Sebha'
               ),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/icon_radio.png',),  size: 50,
+                  icon: ImageIcon(AssetImage('assets/images/icon_radio.png',),  size: 40,
                   ),
                   backgroundColor: MyThemeData.secondaryColor,
                   label: 'Radio'
               ),
             ]
         ),
+
+        body: tabs[currentIndex],
       ),
     );
   }
