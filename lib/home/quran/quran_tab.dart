@@ -25,7 +25,7 @@ class QuranTab extends StatelessWidget {
             separatorBuilder: (context,index)=>Divider(thickness: 3,color: MyThemeData.secondaryColor),
             itemCount: suraName.length,
             itemBuilder: (_,index){
-              return SuraName(sura: '${suraName[index]}');
+              return SuraName(sura: '${suraName[index]}',index: index,);
             } ),
         ),
       ],

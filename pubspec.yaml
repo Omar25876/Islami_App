@@ -63,7 +63,8 @@ flutter:
   assets:
     - assets/images/
     - assets/files_quran/
-    - assets/files_ahadeth/
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
