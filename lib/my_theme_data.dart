@@ -16,6 +16,9 @@ class MyThemeData{
       headline1: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),
       subtitle1:  TextStyle(fontWeight: FontWeight.w600,fontSize: 25),
     ),
+    iconTheme: IconThemeData(
+      color: Colors.black,
+    ),
   );
 
   static ThemeData DarkTheme = ThemeData(
