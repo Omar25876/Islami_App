@@ -17,7 +17,7 @@ class SuraName extends StatelessWidget {
       },
       child: Center(
           child: Text(
-            '$sura',style: Theme.of(context).textTheme.subtitle1,
+            '$sura',style: Theme.of(context).textTheme.headline1,
             textDirection: TextDirection.rtl,
           ),
       ),
