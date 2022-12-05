@@ -22,7 +22,7 @@ static String routeName = 'Hadeth Model';
       },
       child: Center(
         child: Text(
-          '${hadeth.title}',style: Theme.of(context).textTheme.subtitle1,
+          '${hadeth.title}',style: Theme.of(context).textTheme.headline1,
           textDirection: TextDirection.rtl,
         ),
       ),
