@@ -21,13 +21,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
 
-  List<Widget> tabs =
-  [
+  List<Widget> tabs = [
     QuranTab(),
     HadethTab(),
     SebhaTab(),
-    RadioTab(),
-    SettingTab(),
+    const RadioTab(),
+    const SettingTab(),
   ];
 
   @override
@@ -36,58 +35,83 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(provider.cuurrenttheme==ThemeMode.light?
-          'assets/images/default_bg.png':'assets/images/dark_bg.png',),
+          image: AssetImage(
+            provider.cuurrenttheme == ThemeMode.light
+                ? 'assets/images/default_bg.png'
+                : 'assets/images/dark_bg.png',
+          ),
           fit: BoxFit.fill,
         ),
       ),
       child: Scaffold(
-        appBar:AppBar(
-          title: Text(AppLocalizations.of(context)!.islami,style: Theme.of(context).textTheme.headline1,),
+        appBar: AppBar(
+          title: Text(
+            AppLocalizations.of(context)!.islami,
+            style: Theme.of(context).textTheme.headline1,
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: currentIndex,
-          onTap:  (index) {
-            currentIndex = index;
-            setState(() {
-
-            });
-          },
-
-            items:
-            [
+            currentIndex: currentIndex,
+            onTap: (index) {
+              currentIndex = index;
+              setState(() {});
+            },
+            items: [
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/icon_quran.png'),
-                  size: 40,
-                  ),
-                  backgroundColor: provider.cuurrenttheme==ThemeMode.light?MyThemeData.secondaryColor:MyThemeData.primaryColorDark,                  label: AppLocalizations.of(context)!.quran
-              ),
-              BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/icon_hadeth.png',) ,
+                  icon: const ImageIcon(
+                    AssetImage('assets/images/icon_quran.png'),
                     size: 40,
-                      ),
-                  backgroundColor: provider.cuurrenttheme==ThemeMode.light?MyThemeData.secondaryColor:MyThemeData.primaryColorDark,                  label: AppLocalizations.of(context)!.hadeth
-              ),
-              BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/icon_sebha.png',),  size: 40,
                   ),
-                  backgroundColor: provider.cuurrenttheme==ThemeMode.light?MyThemeData.secondaryColor:MyThemeData.primaryColorDark,                  label: AppLocalizations.of(context)!.sebha
-              ),
+                  backgroundColor: provider.cuurrenttheme == ThemeMode.light
+                      ? MyThemeData.secondaryColor
+                      : MyThemeData.primaryColorDark,
+                  label: AppLocalizations.of(context)!.quran),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/icon_radio.png',),  size: 40,
+                  icon: const ImageIcon(
+                    AssetImage(
+                      'assets/images/icon_hadeth.png',
+                    ),
+                    size: 40,
                   ),
-                  backgroundColor: provider.cuurrenttheme==ThemeMode.light?MyThemeData.secondaryColor:MyThemeData.primaryColorDark,
-                  label: AppLocalizations.of(context)!.radio
-              ),
+                  backgroundColor: provider.cuurrenttheme == ThemeMode.light
+                      ? MyThemeData.secondaryColor
+                      : MyThemeData.primaryColorDark,
+                  label: AppLocalizations.of(context)!.hadeth),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/setting_logoo.png',),  size: 32,
+                  icon: const ImageIcon(
+                    AssetImage(
+                      'assets/images/icon_sebha.png',
+                    ),
+                    size: 40,
                   ),
-                  backgroundColor: provider.cuurrenttheme==ThemeMode.light?MyThemeData.secondaryColor:MyThemeData.primaryColorDark,
-                  label: AppLocalizations.of(context)!.setting,
+                  backgroundColor: provider.cuurrenttheme == ThemeMode.light
+                      ? MyThemeData.secondaryColor
+                      : MyThemeData.primaryColorDark,
+                  label: AppLocalizations.of(context)!.sebha),
+              BottomNavigationBarItem(
+                  icon: const ImageIcon(
+                    AssetImage(
+                      'assets/images/icon_radio.png',
+                    ),
+                    size: 40,
+                  ),
+                  backgroundColor: provider.cuurrenttheme == ThemeMode.light
+                      ? MyThemeData.secondaryColor
+                      : MyThemeData.primaryColorDark,
+                  label: AppLocalizations.of(context)!.radio),
+              BottomNavigationBarItem(
+                icon: const ImageIcon(
+                  AssetImage(
+                    'assets/images/setting_logoo.png',
+                  ),
+                  size: 32,
+                ),
+                backgroundColor: provider.cuurrenttheme == ThemeMode.light
+                    ? MyThemeData.secondaryColor
+                    : MyThemeData.primaryColorDark,
+                label: AppLocalizations.of(context)!.setting,
               ),
-            ]
-        ),
-
+            ]),
         body: tabs[currentIndex],
       ),
     );

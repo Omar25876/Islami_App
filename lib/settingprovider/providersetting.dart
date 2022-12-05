@@ -1,17 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SettingProvider extends ChangeNotifier{
-
+class SettingProvider extends ChangeNotifier {
   String currentlocal = "en";
   ThemeMode cuurrenttheme = ThemeMode.light;
 
-  changecurrentlocal(String newlocal){
+  changecurrentlocal(String newlocal) {
     currentlocal = newlocal;
     notifyListeners();
   }
 
-  changecurrenttheme(ThemeMode newtheme){
+  changecurrenttheme(ThemeMode newtheme) {
     cuurrenttheme = newtheme;
     notifyListeners();
   }
