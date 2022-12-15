@@ -6,14 +6,17 @@ import 'package:islami/home/setting/themebottomsheet.dart';
 import 'package:islami/my_theme_data.dart';
 import 'package:islami/settingprovider/providersetting.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'home/hadeth/hadeth_details.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  SettingProvider.prefs = await SharedPreferences.getInstance();
   runApp(
     ChangeNotifierProvider(
-      create: (context) => SettingProvider(),
+      create: (context) => SettingProvider()..getLocal()..gettheme(),
       child: MyApp(),
     ),
   );
