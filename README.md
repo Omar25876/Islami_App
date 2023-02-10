@@ -1,3 +1,3 @@
 # islami App
 
-![alt text](https://github.com/[Omar25876]/[Islami_App]/blob/[master]/radio_image.png?raw=true)
+![quran – 3@3x](https://user-images.githubusercontent.com/113053935/218100422-d291b8b0-fd25-4ff6-989d-be83d02fda1f.png)
