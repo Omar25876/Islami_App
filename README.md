@@ -1,3 +1,3 @@
 # islami App
 
-(https://github.com/Omar2587/Islami_App/blob/assets/images/radio_image.png?raw=true)
+![alt text](https://github.com/[Omar25876]/[Islami_App]/blob/[master]/radio_image.png?raw=true)
